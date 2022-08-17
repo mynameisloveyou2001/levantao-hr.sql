@@ -135,9 +135,7 @@ insert into job_grades values
 update employees 
 	set email='hr@gmail.com' 
 	where department_id in 
-		(select id 
-			from departments 
-				where name = 'HR')
+		(select id from departments where name = 'HR')
 
 
 --7 
@@ -164,11 +162,11 @@ update employees
 
 update employees 
 	set salarary = case department_id
-						when 1 then salarary+(salarary*0.25)
-						when 2 then salarary+(salarary*0.15)
-						when 3 then salarary+(salarary*0.10)
-						else salarary
-				   end
+			when 1 then salarary+(salarary*0.25)
+			when 2 then salarary+(salarary*0.15)
+			when 3 then salarary+(salarary*0.10)
+			else salarary
+		end
 
 --9
  --Write a SQL statement to increase the minimum and 
@@ -252,7 +250,7 @@ UPDATE jobs,employees
  --Write a query to get the employee ID, names (first_name, last_name), 
  --salary in ascending order of salary.
 
-select id, CONCAT(first_name, last_name) as names, salarary 
+select id, CONCAT(first_name, last_name) as name, salarary 
 	from employees 
 		order by salarary desc
 
