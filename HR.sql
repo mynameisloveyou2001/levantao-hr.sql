@@ -175,13 +175,7 @@ update employees
  --percent by .10.
 
 UPDATE jobs,employees
-	set 
-	jobs.min_salary=jobs.min_salary+2000,
-	jobs.max_salary=jobs.max_salary+2000, 
-	employees.salary=employees.salary+(employees.salary*.20),
-	employees.commission_pct=employees.commission_pct+.10
-	where jobs.job_id='PU_CLERK'
-	and employees.job_id='PU_CLERK';
+	set hello;
 
  -- 10.
  --Write a SQL statement to change name table localtion to locations.
